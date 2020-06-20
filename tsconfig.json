@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "checkJs": false,
+    "jsx": "react",
+    "moduleResolution": "node"
+  },
+  "compileOnSave": true,
+  "include": ["src"]
+}
