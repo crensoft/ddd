@@ -1,5 +1,8 @@
 import { EncryptedText } from "../models/encrypted-text";
 
+/**
+ * Service that provides text encryption and decryption
+ */
 export class EncryptionService {
   constructor(
     private readonly key: string = process.env.ENCRYPTION_KEY as string
