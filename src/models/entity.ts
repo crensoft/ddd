@@ -1,4 +1,3 @@
-import { shallowEqual } from "shallow-equal-object";
 import { Identifier } from "./identifier";
 
 export const isEntity = (v: any): v is Entity<any> => {
