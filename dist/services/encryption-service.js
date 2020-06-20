@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const encrypted_text_1 = require("../models/encrypted-text");
+/**
+ * Service that provides text encryption and decryption.
+ */
 class EncryptionService {
     constructor(key = process.env.ENCRYPTION_KEY) {
         this.key = key;
