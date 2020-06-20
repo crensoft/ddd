@@ -1,6 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const event_service_1 = require("../services/event-service");
+/**
+ * Aggregate Root Model
+ */
 class AggregateRoot {
     constructor() {
         this.events = [];

@@ -1,5 +1,8 @@
 import { eventService } from "../services/event-service";
 
+/**
+ * Aggregate Root Model
+ */
 export class AggregateRoot {
   events: any[] = [];
 

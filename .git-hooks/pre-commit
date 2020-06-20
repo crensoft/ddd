@@ -7,4 +7,4 @@ doErr() {
   exit 1
 }
 
-git diff --quiet HEAD master -- dist || doErr
+git diff --quiet ./dist || doErr
