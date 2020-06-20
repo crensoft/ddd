@@ -1,4 +1,4 @@
-import { Identifier } from "../";
+import { Identifier } from "../models/identifier";
 
 /**
  * Ensure value is an Identifier object

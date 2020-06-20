@@ -1,5 +1,5 @@
-import { ValueObject } from "../";
 import crypto from "crypto";
+import { ValueObject } from "./value-object";
 
 interface IEncryptedText {
   readonly cipher: string;
