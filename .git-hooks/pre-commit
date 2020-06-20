@@ -2,4 +2,4 @@
 
 yarn build
 
-git diff --quiet HEAD master -- dist || echo 'DIST not committed. Exiting' && exit 1
+git diff --quiet HEAD master -- dist || (echo 'DIST not committed. Exiting' && exit 1)
