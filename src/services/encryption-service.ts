@@ -1,7 +1,7 @@
 import { EncryptedText } from "../models/encrypted-text";
 
 /**
- * Service that provides text encryption and decryption
+ * Service that provides text encryption and decryption.
  */
 export class EncryptionService {
   constructor(
