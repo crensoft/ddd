@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const __1 = require("../");
+const identifier_1 = require("../models/identifier");
 /**
  * Ensure value is an Identifier object
  */
@@ -9,7 +9,7 @@ function ensureId(val) {
         // return undefined
         return val;
     }
-    return val instanceof __1.Identifier ? val : new __1.Identifier(val);
+    return val instanceof identifier_1.Identifier ? val : new identifier_1.Identifier(val);
 }
 exports.ensureId = ensureId;
 //# sourceMappingURL=ensure-id.js.map

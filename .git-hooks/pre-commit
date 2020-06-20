@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
 yarn build
-git add build
+
+git diff --quiet HEAD master -- dist || echo 'DIST not committed. Exiting' && exit 1
