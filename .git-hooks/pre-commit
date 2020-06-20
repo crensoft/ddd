@@ -3,7 +3,7 @@
 yarn build
 
 doErr() {
-  echo 'DIST not committed. Exiting'
+  echo '\e[91mDIST not committed. Exiting'
   exit 1
 }
 

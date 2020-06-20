@@ -12,7 +12,8 @@
     "target": "es6",
     "checkJs": false,
     "jsx": "react",
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "declaration": true
   },
   "compileOnSave": true,
   "include": ["src"]
