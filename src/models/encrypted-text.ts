@@ -6,6 +6,9 @@ interface IEncryptedText {
   readonly plain: string;
 }
 
+/**
+ * Encrypted Text value object
+ */
 export class EncryptedText extends ValueObject<IEncryptedText> {
   private constructor(props: Partial<IEncryptedText>) {
     super(props as any);
