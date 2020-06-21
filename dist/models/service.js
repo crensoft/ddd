@@ -55,7 +55,7 @@ class Service extends value_object_1.ValueObject {
     }
     static create(conf) {
         return new Service({
-            name,
+            name: conf.name,
             app: conf.app || new koa_1.default(),
             router: conf.router || new router_1.default(),
         });

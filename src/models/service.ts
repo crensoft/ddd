@@ -63,7 +63,7 @@ export class Service extends ValueObject<IService> {
 
   public static create(conf: Pick<IService, "name"> & Partial<IService>) {
     return new Service({
-      name,
+      name: conf.name,
       app: conf.app || new Koa(),
       router: conf.router || new Router(),
     });
