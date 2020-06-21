@@ -1,7 +1,7 @@
 import Koa from "koa";
 import Router from "@koa/router";
 import { ValueObject } from "./value-object";
-import { log } from "console";
+// import { log } from "console";
 
 interface IService {
   readonly name: string;
@@ -18,13 +18,13 @@ export class Service extends ValueObject<IService> {
   private constructor(props: Partial<IService>) {
     super(props as any);
 
-    this.app.use(async (ctx) => {
-      ctx.body = `Hi from ${this.name} Service`;
-    });
+    // this.app.use(async (ctx) => {
+    //   ctx.body = `Hi from ${this.name} Service`;
+    // });
 
-    this.app.on("error", (err) => {
-      log("server error", err);
-    });
+    // this.app.on("error", (err) => {
+    //   log("server error", err);
+    // });
   }
 
   toValue() {
