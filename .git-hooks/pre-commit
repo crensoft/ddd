@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
+set -Eeuo pipefail
+
+rm -rf ./dist/*
+
+yarn test
 
 yarn build
 
-doErr() {
-  echo '\e[91mDIST not committed. Exiting'
-  exit 1
-}
+git add ./dist
 
-git diff --quiet ./dist || doErr
+# doErr() {
+#   echo '\e[91mDIST not committed. Exiting'
+#   exit 1
+# }
+
+# git diff --quiet ./dist || doErr

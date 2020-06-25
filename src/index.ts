@@ -1,4 +1,5 @@
 export { ensureId } from "./utils/ensure-id";
+export { svcName } from "./utils/svc-name";
 
 export { AggregateRoot } from "./models/aggregate-root";
 export { EncryptedText } from "./models/encrypted-text";

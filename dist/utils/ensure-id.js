@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ensureId = void 0;
 const identifier_1 = require("../models/identifier");
 /**
  * Ensure value is an Identifier object
