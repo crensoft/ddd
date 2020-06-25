@@ -9,5 +9,5 @@ const app_root_path_1 = __importDefault(require("app-root-path"));
 /**
  * Get service name from directory structure
  */
-exports.svcName = () => `${path_1.basename(app_root_path_1.default.path).replace("-", "/")}`;
+exports.svcName = () => (process.env.SVC_NAME || `${path_1.basename(app_root_path_1.default.path)}`).replace("-", "/");
 //# sourceMappingURL=svc-name.js.map
