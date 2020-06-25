@@ -1,6 +1,6 @@
 {
   "name": "@crensoft/ddd",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "DDD and microservices helpers",
   "main": "dist/index.js",
   "repository": "https://github.com/crensoft/ddd",
