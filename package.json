@@ -1,6 +1,6 @@
 {
   "name": "@crensoft/ddd",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "DDD and microservices helpers",
   "main": "dist/index.js",
   "repository": "https://github.com/crensoft/ddd",
@@ -10,12 +10,14 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "test": "jest --forceExit --verbose",
-    "test:watch": "yarn test --watchAll"
+    "test:watch": "yarn test --watchAll",
+    "start": "yarn test:watch"
   },
   "dependencies": {
     "@koa/router": "^9.0.1",
     "app-root-path": "^3.0.0",
     "await-to-js": "^2.1.1",
+    "chalk": "^4.1.0",
     "fs-extra": "^9.0.1",
     "get-port": "^5.1.1",
     "koa": "^2.12.1",

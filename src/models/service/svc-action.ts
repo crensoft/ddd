@@ -2,6 +2,8 @@ import path, { basename } from "path";
 import Router from "@koa/router";
 import fse from "fs-extra";
 import to from "await-to-js";
+import chalk from "chalk";
+import appRoot from "app-root-path";
 import { ValueObject } from "../value-object";
 import { svcName } from "../../utils/svc-name";
 
@@ -12,7 +14,14 @@ interface ISvcAction {
 }
 
 export class SvcAction extends ValueObject<ISvcAction> {
-  static ACTION_DIR = path.join(__dirname, "actions");
+  static ACTION_DIR =
+    process.env.NODE_ENV === "test"
+      ? path.join(__dirname, "actions")
+      : path.join(
+          appRoot.toString(),
+          basename(path.join((require as any).main.filename, "..")),
+          "actions"
+        );
 
   private constructor(props: Partial<ISvcAction>) {
     super(props as any);
@@ -74,7 +83,9 @@ export class SvcAction extends ValueObject<ISvcAction> {
       }))
     ) {
       console.log(
-        `ACTIONS directory not found at "${SvcAction.ACTION_DIR}". Skipping...`
+        chalk.cyan(
+          `ACTIONS directory not found at "${SvcAction.ACTION_DIR}". Skipping...`
+        )
       );
       return false;
     }
@@ -86,7 +97,7 @@ export class SvcAction extends ValueObject<ISvcAction> {
     }
 
     if (!files || !files.length) {
-      console.log("No actions found. Skipping...");
+      console.log(chalk.cyan("No actions found. Skipping..."));
       return false;
     }
 

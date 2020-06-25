@@ -74,6 +74,7 @@ class Service extends value_object_1.ValueObject {
     }
     useRoutes() {
         this.app.use(this.router.routes());
+        this.app.use(this.router.allowedMethods());
     }
     listen(port) {
         return this.app.listen({ port: port || Service.PORT }, () => console.log(`🚀 ${this.name} Service ready at http://localhost:${port || Service.PORT}`));

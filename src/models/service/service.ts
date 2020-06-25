@@ -79,6 +79,7 @@ export class Service extends ValueObject<IService> {
 
   useRoutes() {
     this.app.use(this.router.routes());
+    this.app.use(this.router.allowedMethods());
   }
 
   listen(port?: number | string) {

@@ -35,6 +35,8 @@ exports.SvcAction = void 0;
 const path_1 = __importStar(require("path"));
 const fs_extra_1 = __importDefault(require("fs-extra"));
 const await_to_js_1 = __importDefault(require("await-to-js"));
+const chalk_1 = __importDefault(require("chalk"));
+const app_root_path_1 = __importDefault(require("app-root-path"));
 const value_object_1 = require("../value-object");
 const svc_name_1 = require("../../utils/svc-name");
 class SvcAction extends value_object_1.ValueObject {
@@ -74,7 +76,9 @@ class SvcAction extends value_object_1.ValueObject {
     }
 }
 exports.SvcAction = SvcAction;
-SvcAction.ACTION_DIR = path_1.default.join(__dirname, "actions");
+SvcAction.ACTION_DIR = process.env.NODE_ENV === "test"
+    ? path_1.default.join(__dirname, "actions")
+    : path_1.default.join(app_root_path_1.default.toString(), path_1.basename(path_1.default.join(require.main.filename, "..")), "actions");
 SvcAction.assertValid = (action) => {
     if (action.method === undefined) {
         throw new Error('Expected actionMethod to be set when using actionType of "route"');
@@ -84,7 +88,7 @@ SvcAction.registerSvcActions = (router) => __awaiter(void 0, void 0, void 0, fun
     if (!(yield fs_extra_1.default.pathExists(SvcAction.ACTION_DIR).catch((e) => {
         throw e;
     }))) {
-        console.log(`ACTIONS directory not found at "${SvcAction.ACTION_DIR}". Skipping...`);
+        console.log(chalk_1.default.cyan(`ACTIONS directory not found at "${SvcAction.ACTION_DIR}". Skipping...`));
         return false;
     }
     const [filesErr, files] = yield await_to_js_1.default(fs_extra_1.default.readdir(SvcAction.ACTION_DIR));
@@ -92,7 +96,7 @@ SvcAction.registerSvcActions = (router) => __awaiter(void 0, void 0, void 0, fun
         throw filesErr;
     }
     if (!files || !files.length) {
-        console.log("No actions found. Skipping...");
+        console.log(chalk_1.default.cyan("No actions found. Skipping..."));
         return false;
     }
     files
